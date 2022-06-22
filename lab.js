@@ -124,10 +124,20 @@ function greeting( obj ) {
 */
 
 //Code Here
-function totalPopulation9(obj) {
-  
+const state = {
+  utah: 1,
+  california: 4,
+  texas: 2,
+  arizona: 3,
 }
 
+function totalPopulation(state) {
+  let {utah, california, texas, arizona} = state
+  let total = utah + california + texas + arizona
+  return(total)
+} 
+
+console.log(totalPopulation(state))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -140,19 +150,23 @@ function totalPopulation9(obj) {
 */
 
 //Code Here
-
-
+function ingredients(macros) {
+  let {carb, fat, protein} = macros
+  let arr = []
+  arr.push("carb", "fat", "protein");
+  return arr
+}
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
-// Do not edit the code below.
-var user = {
-  name: 'Bryan',
-  age: 24,
-  pwHash: 'U+Ldlngx2BYQk',
-  email: 'BryanSmith33@gmail.com',
-  birthday: '05/02/1990',
-  username: 'bryansmith33'
-};
+// // Do not edit the code below.
+// var user = {
+//   name: 'Bryan',
+//   age: 24,
+//   pwHash: 'U+Ldlngx2BYQk',
+//   email: 'BryanSmith33@gmail.com',
+//   birthday: '05/02/1990',
+//   username: 'bryansmith33'
+// };
 // Do not edit the code above.
 
 /*
@@ -162,48 +176,80 @@ var user = {
 */
 
 //Code Here
+// user.name = "Bryan G. Smith";
+// user.email = "bryan.smith@devmountain";
 
+// //////////////////////////// PROBLEM 11 ////////////////////////////
+// /*
+//   Using the user object above, delete the users age off of the object.
+// */
 
-//////////////////////////// PROBLEM 11 ////////////////////////////
-/*
-  Using the user object above, delete the users age off of the object.
-*/
-
-//Code Here
-
-
+// //Code Here
+// delete user.age
+// console.log(user.age)
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
-  Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
+  Create a class called 'Cat'. 
+  Make sure to call your constructor, and 
+  require these 3 parameters: name, age, color.
   Outside of your class, create an instance of your cat, passing in whatever values you would like.
   Print the name of your cat instance using dot notation.
 */
 
 //Code here
+class Cat {
+  constructor(name, age, color){
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
+
+let cat1 = new Cat("Whiskers", 3, "Black")
+
+console.log(cat1.name);
 
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
-  Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
-  Add a function to your Wizard class called castSpell. This function should print "{name} has cast {favoriteSpell}"
+  Create a class called 'Wizard'. 
+  Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
+  Add a function to your Wizard class called castSpell. 
+  This function should print "{name} has cast {favoriteSpell}"
   Outside of your class, create an instance of your Wizard, passing in whatever values you would like.
   Call the castSpell function on the instance of your wizard.
 */
 
 //Code here
-
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell(){
+  console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+  falls(){
+    console.log(`${this.name} has fallen into the abyss`)
+  }
+}
+let wizard1 = new Wizard("Gandalf", 2000, "YOU SHALL NOT PASS")
+wizard1.castSpell()
+wizard1.falls()
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
-    Write a class called Phone. We'll use it as if we were creating
+    Write a class called Phone. 
+    We'll use it as if we were creating
     phone objects to keep track of inventory using an app.
 
     Phone will build phone objects with brand, model, storage, color, price, and sold properties.
 
-    Write a constructor that sets those values -- all of the values 
-    should come from the constructors parameters except sold, which
-    should always be set to false. We want that to be false since 
-    when we create a new phone, we're putting it in our inventory
+    Write a constructor that sets those values
+     -- all of the values should come from the constructors parameters 
+     except sold, which should always be set to false. 
+     We want that to be false since when we create a new phone, we're putting it in our inventory
     and it won't be sold yet. 
 
     Create a method called 'sell'.
@@ -217,7 +263,19 @@ var user = {
 */
 
 //Code Here
-
+class Phone {
+  constructor(brand, model, storage, color, price, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+  sell() {this.sold = true
+    console.log(`${brand} ${model} has been sold.`);
+  }
+}
   
 /*
     Next make three new phone instances using your class.
